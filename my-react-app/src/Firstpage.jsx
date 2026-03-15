@@ -1,8 +1,12 @@
 import React from 'react';
+import React, { useState } from 'react';
 import './First.css';
 
 const Firstpage = () => {
-  // Particles jada karne ke liye length 50 kar di
+  const[ShowMuseum,setShowMuseum]=useState(false);
+    if(ShowMuseum){
+      return <EgyptMuseum />
+    }
   const particles = Array.from({ length: 50 });
 
   return (
@@ -30,7 +34,7 @@ const Firstpage = () => {
         <h1 className="title">STEP INSIDE HISTORY</h1>
         <p className="subtitle">Experience ancient artifacts in Augmented Reality</p>
         
-        <button className="begin-btn">
+        <button className="begin-btn" onClick={()=> setShowMuseum(true)}  >
           LET'S BEGIN
         </button>
       </div>
